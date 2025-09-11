@@ -124,23 +124,17 @@ void printList(struct Node* head){
 
 int main(){
 struct Node* head=NULL;
-
 insertFront(&head,15);
 insertFront(&head,10);//head
 
 insertBack(&head,20);
 insertBack(&head,25);
 insertBack(&head,30);
-
+deleteByValue(&head,25);
 insertAt(&head,18,3);
 
 printList(head);
-
-deleteFront(&head);
-deleteByValue(&head,25);
-
-printList(head);
-    
+  
 
 return 0;
 }
