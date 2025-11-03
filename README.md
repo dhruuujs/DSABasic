@@ -1,5 +1,5 @@
 # DSABasic
-This repo contains basic data structures implemented in C and C++
+This repo contains data structures implemented in C and C++
 
 In Basic DSA, include:
 1)Linked List,
