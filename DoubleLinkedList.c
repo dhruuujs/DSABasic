@@ -47,14 +47,15 @@ if(*head==NULL){
     printf("List is empty!\n");
     return;
 }
-struct Node* temp=(*head)->next;
-temp->prev=NULL;
-*head=temp;
-free(*head);
+struct Node* temp = *head;
+*head=temp->next;
+if(*head!=NULL){
+(*head)->prev=NULL;
+}
+free(temp);
 }
 
 
-//This function have a segmentation bug, near while loop
 void deleteByValue(struct Node** head, int value) {
     if (*head == NULL) {
         printf("List is empty!\n");
@@ -70,7 +71,7 @@ void deleteByValue(struct Node** head, int value) {
         return;
     }
     struct Node* temp = *head;
-    while (temp!= NULL && temp->data != value) {//SEG_ERROR
+    while (temp!= NULL && temp->data != value) {
         temp = temp->next;
     }
     if (temp == NULL) {
